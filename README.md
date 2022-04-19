@@ -1,4 +1,4 @@
-# Analysis Crossfit Opens 2020 with Streamlit 🎨
+# Analysis of Crossfit Opens Athletes 2020 with Streamlit 🎨
 
 ## Objective:
 The goal is to do an analysis on RX athletes in this phase of the Open in 2020.
