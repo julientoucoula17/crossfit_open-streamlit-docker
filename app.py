@@ -61,16 +61,17 @@ with col1:
 
 with col2:
     st.markdown(f"**2️⃣ Average on age, height and weight in {country}**")
-    
-    division = st.selectbox("Select a division",data_with_filter["division"].sort_values().unique())
 
-    avg_age_height = data_with_filter[((data_with_filter["countryoforiginname"]==country) & (data_with_filter["division"]==division))]
+    division = st.selectbox("Select a division", data_with_filter["division"].sort_values().unique())
 
-    avg = avg_age_height.mean()
+    avg_age_height = data_with_filter[
+        ((data_with_filter["countryoforiginname"] == country) & (data_with_filter["division"] == division))]
+
+    avg = avg_age_height[['age', 'height', 'weight']].mean()
     st.metric("Average age:", np.round(avg['age'], 2))
-    st.metric("Average height(m):",np.round(avg['height'], 2))
-    st.metric("Average weight(kg):",np.round(avg['weight'], 2))
-    st.metric("Average IMC:",np.round(avg['weight'] /  (avg['height']**2),2))
+    st.metric("Average height(m):", np.round(avg['height'], 2))
+    st.metric("Average weight(kg):", np.round(avg['weight'], 2))
+    st.metric("Average IMC:", np.round(avg['weight'] / (avg['height'] ** 2), 2))
 
 
 st.markdown(f"**3️⃣ Affiliate Box in {country}**")
